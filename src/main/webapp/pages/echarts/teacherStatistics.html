@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ECharts</title>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="../../static/css/font.css">
+    <link rel="stylesheet" href="../../static/css/weadmin.css">
+    <script src="../../lib/layui/layui.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="../../static/css/font.css">
+    <link rel="stylesheet" href="../../static/css/weadmin.css">
+
+    <!-- 引入 echarts.js -->
+    <script src="../../static/js/echarts.js"></script>
+</head>
+
+<body>
+    <div class="weadmin-body">
+        <blockquote class="layui-elem-quote">
+            教师信息统计图
+        </blockquote>
+        <form class="layui-form">
+            <div class="layui-form-item">
+                <label class="layui-form-label">统计类型：</label>
+                <div class="layui-inline">
+                    <select name="test" lay-verify="" lay-filter='test'>
+  <option value="">请选择统计方式</option>
+  <option value="1">岗位类别</option>
+  <option value="2">职称等级</option>
+  <option value="3">学历</option>
+  <option value="4">部门</option>
+</select>
+                </div>
+            </div>
+        </form>
+        <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+        <div id="main" style="width: 100%;height:400px;"></div>
+        <blockquote class="layui-elem-quote">
+            数据来源：后台数据库
+        </blockquote>
+        <script type="text/javascript">
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(document.getElementById('main'));
+
+            // 指定图表的配置项和数据
+            var option1 = {
+                color: ['#3398DB'],
+                title: {
+                    text: '教师岗位人数统计'
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: { // 坐标轴指示器，坐标轴触发有效
+                        type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+                    }
+                },
+                legend: {
+                    data: ['岗位类别']
+                },
+                xAxis: {
+                    data: ["教师", "双肩挑", "辅导员", "管理", "其他专技", "退休"]
+                },
+                yAxis: {},
+                series: [{
+                    name: '岗位类别',
+                    type: 'bar',
+                    data: [52, 20, 12, 10, 10, 20]
+                }]
+            };
+
+            var option2 = {
+                color: ['#3398DB'],
+                title: {
+                    text: '职称等级人数统计'
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: { // 坐标轴指示器，坐标轴触发有效
+                        type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+                    }
+                },
+                legend: {
+                    data: ['职称等级']
+                },
+                xAxis: {
+                    data: ["正高级", "副高级", "中级", "初级", "未维护"]
+                },
+                yAxis: {},
+                series: [{
+                    name: '职称等级',
+                    type: 'bar',
+                    data: [4, 60, 70, 10, 10]
+                }]
+            };
+
+            var option3 = {
+                color: ['#3398DB'],
+                title: {
+                    text: '学历人数统计'
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: { // 坐标轴指示器，坐标轴触发有效
+                        type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+                    }
+                },
+                legend: {
+                    data: ['学历']
+                },
+                xAxis: {
+                    data: ["博士研究生毕业", "硕士研究生毕业", "研究生班结业", "大学本科毕业", "大学专科毕业", "中等专科毕业"]
+                },
+                yAxis: {},
+                series: [{
+                    name: '学历',
+                    type: 'bar',
+                    data: [38, 35, 15, 14, 3, 1]
+                }]
+            };
+
+            var option4 = {
+                color: ['#3398DB'],
+                title: {
+                    text: '各部门人数统计'
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: { // 坐标轴指示器，坐标轴触发有效
+                        type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+                    }
+                },
+                legend: {
+                    data: ['部门']
+                },
+                xAxis: {
+                    data: ["无","电气工程系","电子工程系","计算机工程系","计算机基础教研室", "建筑智慧节点重点实验室","教学管理办公室","实验中心","学生工作办公室","综合办公室"]
+                },
+                yAxis: {},
+                series: [{
+                    name: '部门',
+                    type: 'bar',
+                    data: [3, 11, 22, 19, 18, 1, 4, 17, 7, 3]
+                }]
+            };
+            // 使用刚指定的配置项和数据显示图表。
+            //myChart.setOption(option);
+            layui.extend({
+                admin: '{/}../../static/js/admin'
+            });
+            layui.use(['form'], function() {
+                var form = layui.form;
+                form.on('select(test)', function(data) {
+                    if (data.value == '1') {
+                        myChart.setOption(option1);
+                    } else if (data.value == '2') {
+                        myChart.setOption(option2);
+                    } else if (data.value == '3') {
+                        myChart.setOption(option3);
+                    } else if (data.value == '4') {
+                        myChart.setOption(option4);
+                    }
+                })
+            });
+            //var form=layui.form,layer=layui.layer;
+        </script>
+    </div>
+</body>
+</html>

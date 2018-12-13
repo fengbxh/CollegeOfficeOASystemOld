@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>会员列表-WeAdmin Frame型后台管理系统-WeAdmin 1.0</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<link rel="stylesheet" href="../../static/css/font.css">
+		<link rel="stylesheet" href="../../static/css/weadmin.css">
+	</head>
+
+	<body>
+		<div class="weadmin-nav">
+			<span class="layui-breadcrumb">
+        <a href="">首页</a>
+        <a href="">教师信息管理</a>
+        <a>
+          <cite>教师信息列表</cite></a>
+      </span>
+			<a class="layui-btn layui-btn-sm" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);" title="刷新">
+				<i class="layui-icon" style="line-height:30px">&#x1002;</i></a>
+		</div>
+		<div id="testText">
+		</div>
+		<div class="weadmin-body">
+			<div class="layui-row">
+				<form class="layui-form layui-col-md12 we-search">
+					关键字查询：
+					<div class="layui-inline">
+						<input type="text" name="username" placeholder="职工号" autocomplete="off" class="layui-input">
+					</div>
+					<div class="layui-inline">
+						<input type="text" name="username" placeholder="姓名" autocomplete="off" class="layui-input">
+					</div>
+					<button class="layui-btn" lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
+				</form>
+			</div>
+			<div class="weadmin-block">
+				<button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>
+				<button class="layui-btn" onclick="WeAdminShow('添加教师','./add.html',600,400)"><i class="layui-icon"></i>添加</button>
+				<button class="layui-btn layui-btn-danger" onclick="WeAdminShow('导出用户','./export.html',600,400)"><i class="layui-icon layui-icon-share">&#xe641;</i>导出</button>
+				<button class="layui-btn"><i class="layui-icon"></i>编辑列</button>
+				<span class="fr" style="line-height:40px">共有数据：1 条</span>
+			</div>
+			<table class="layui-table" id="memberList">
+				<thead>
+					<tr>
+						<th>
+							<div class="layui-unselect header layui-form-checkbox" lay-skin="primary"><i class="layui-icon">&#xe605;</i></div>
+						</th>
+						<th>职工号</th>
+						<th>姓名</th>
+						<th>年龄</th>
+						<th>出生日期</th>
+						<th>学历</th>
+						<th>毕业学校</th>
+						<th>所学专业</th>
+						<th>邮箱</th>
+						<th>手机号码</th>
+						<th>办公室电话</th>
+						<th>通讯地址</th>
+						<th>其他联系方式</th>
+						<th>高级人才工程</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr data-id="1">
+						<td>
+							<div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id="1"><i class="layui-icon">&#xe605;</i></div>
+						</td>
+						<td>1</td>
+						<td>小张</td>
+						<td>28</td>
+						<td>1111-01-01</td>
+						<td>博士</td>
+						<td>北京大学</td>
+						<td>计算机科学</td>
+						<td>123456@163.com</td>
+						<td>1111111111</td>
+						<td>(0512)1521323</td>
+						<td>中国</td>
+						<td>dadawdaw</td>
+						<td>是</td>
+						<td class="td-manage">
+							<a onclick="member_stop(this,'10001')" href="javascript:;" title="启用">
+								<i class="layui-icon">&#xe601;</i>
+							</a>
+							<a title="编辑" onclick="WeAdminEdit('编辑','./edit.html', 1, 600, 400)" href="javascript:;">
+								<i class="layui-icon">&#xe642;</i>
+							</a>
+							<a onclick="WeAdminShow('修改密码','./password.html',600,400)" title="修改密码" href="javascript:;">
+								<i class="layui-icon">&#xe631;</i>
+							</a>
+							<a title="删除" onclick="member_del(this,'要删除的id')" href="javascript:;">
+								<i class="layui-icon">&#xe640;</i>
+							</a>
+						</td>
+					</tr>
+					
+					</tr>
+				</tbody>
+			</table>
+			<div class="page">
+				<div>
+					<a class="prev" href="">&lt;&lt;</a>
+					<span class="current">1</span>
+					<!--a class="num" href="">2</a-->
+					<a class="next" href="">&gt;&gt;</a>
+				</div>
+			</div>
+		</div>
+		
+		
+		<script src="../../lib/layui/layui.js" charset="utf-8"></script>
+		<script src="../../static/js/eleDel.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>
