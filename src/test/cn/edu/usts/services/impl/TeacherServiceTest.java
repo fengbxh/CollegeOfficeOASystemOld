@@ -25,12 +25,12 @@ public class TeacherServiceTest {
     private ITeacherpersonalinfoService teacherService=null;
     @Test
     public void selectTeacherByTeid() {
-        Teacherpersonalinfo teacher=teacherService.selectTeacherByTeid("12311");
+        Teacherpersonalinfo teacher=teacherService.selectTeacherByTeid("3");
         System.out.println(teacher.getEducation());
     }
     @Test
     public void setTeacherAllInfoByTeid(){
-        Teacherpersonalinfo teacher=teacherService.AllResult("12311");
+        Teacherpersonalinfo teacher=teacherService.AllResult("3");
         Teacheroccupationalinfo teacheroccupationalinfo=teacher.getTeacheroccupationalinfo();
         System.out.println(teacheroccupationalinfo.getTechnicalPosition());
         System.out.println(teacher.getEducation());
