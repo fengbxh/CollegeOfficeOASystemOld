@@ -51,14 +51,14 @@
     <div id="side-nav">
         <ul id="nav">
             <li>
-                <a href="javascript:;">
+                <a href="javascript:;" id="a_teacherinfo">
                     <i class="iconfont">&#xe6b8;</i>
                     <cite>教师信息管理</cite>
                     <i class="iconfont nav_right">&#xe697;</i>
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a _href="./pages/member/list.jsp">
+                        <a _href="./pages/member/list.jsp" id="a_teacherlist">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>教师信息列表</cite>
 

@@ -47,7 +47,7 @@
     </div>
     <div class="weadmin-block">
         <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>
-        <button class="layui-btn" onclick="WeAdminShow('添加教师','../../pages/member/add.jsp',600,400)"><i
+        <button id="list_btn_add" class="layui-btn" onclick="WeAdminShow('添加教师','../../pages/member/add.jsp',600,400)"><i
                 class="layui-icon"></i>添加
         </button>
         <button class="layui-btn layui-btn-danger" onclick="myExport()"><i
