@@ -81,13 +81,13 @@
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a _href="./pages/article/list.html">
+                        <a _href="./pages/room/list.jsp">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>房间信息列表</cite>
                         </a>
                     </li>
                     <li>
-                        <a _href="./pages/article/list.html">
+                        <a _href="./pages/room/add.jsp">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>新增房间信息</cite>
                         </a>

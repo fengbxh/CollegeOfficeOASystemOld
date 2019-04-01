@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
     <!-- 数据库驱动-->
-    <classPathEntry location="G:\sqljdbc4.jar"/>
+    <classPathEntry location="/Users/bixinghua/Nutstore Files/我的坚果云/JavaWorkSpace/CollegeOfficeOASystem/sqljdbc4.jar"/>
 
     <context id="VenueGenerator" targetRuntime="MyBatis3">
         <commentGenerator>
@@ -14,7 +14,7 @@
         </commentGenerator>
         <!--数据库链接URL，用户名、密码 -->
         <jdbcConnection driverClass="com.microsoft.sqlserver.jdbc.SQLServerDriver"
-                        connectionURL="jdbc:sqlserver://localhost:1433;databaseName=CollegeOfficeOASystemDb" userId="sa" password="123456">
+                        connectionURL="jdbc:sqlserver://localhost:1433;databaseName=CollegeOfficeOASystemDb" userId="sa" password="Bxh960608*">
         </jdbcConnection>
         <javaTypeResolver>
             <property name="forceBigDecimals" value="false"/>
@@ -33,7 +33,11 @@
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
         <!-- 要生成哪些表-->
-        <table tableName="TeacherOccupationalInfo"/>
-        <table tableName="TeacherPersonalInfo"/>
+        <!--<table tableName="TeacherOccupationalInfo"/>-->
+        <!--<table tableName="TeacherPersonalInfo"/>-->
+        <table tableName="RoomInfo" />
+        <table tableName="RoomType" />
+        <table tableName="RoomUserMaps" />
+
     </context>
 </generatorConfiguration>

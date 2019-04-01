@@ -160,7 +160,8 @@
             Teacheroccupationalinfo o
         ON
             p.te_id=o.te_id
-        where rownumber>((#{pageIndex}-1)*#{pageSize});
+        where rownumber>((#{pageIndex}-1)*#{pageSize})
+        and p.te_id like '%%' and te_name like N'%%'
     </select>
     <select id="findAll"  resultMap="AllResultMap">
         SELECT
